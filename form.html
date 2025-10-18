@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Change Password & Contact</title>
+  <meta name="description" content="Password change form with validation and address update." />
+  <link rel="stylesheet" href="form.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>🔐 Change Password & Contact</h1>
+
+    <form id="pwdForm" novalidate aria-describedby="form-status">
+      <div class="form-group">
+        <label for="current">Current Password</label>
+        <input id="current" name="current" type="password" required placeholder="Enter current password" />
+      </div>
+
+      <div class="form-group">
+        <label for="newpwd">New Password</label>
+        <input id="newpwd" name="newpwd" type="password" required placeholder="Enter new password" aria-describedby="pwd-req" />
+        <p id="pwd-req" class="hint">
+          • Minimum 9 characters  
+          • At least 2 uppercase letters  
+          • At least 1 special symbol
+        </p>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm">Confirm Password</label>
+        <input id="confirm" name="confirm" type="password" required placeholder="Re-enter new password" />
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input id="address" name="address" type="text" placeholder="Enter address" required />
+        <button id="changeAddress" type="button" class="btn-secondary">Change Address</button>
+      </div>
+
+      <button type="submit" class="btn-primary">Submit</button>
+      <div id="form-status" role="status" aria-live="polite" class="status"></div>
+    </form>
+  </main>
+
+  <script src="form.js"></script>
+</body>
+</html>

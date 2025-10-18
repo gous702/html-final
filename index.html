@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OCU Student Dashboard</title>
+  <meta name="description" content="Student dashboard for Oklahoma City University — access campus resources, explore programs, and stay connected with student life." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <a class="logo" href="index.html">OCU</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
+      <ul id="primary-nav" class="nav-list" hidden>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="form.html">Password</a></li>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="student-dashboard.html" aria-current="page">Dashboard</a></li>
+      </ul>
+    </nav>
+    <h1 class="site-title">OCU Student Dashboard</h1>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main" class="account-container" role="main">
+    
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <h2 id="hero-heading">Welcome Students!</h2>
+      <p>Access campus resources, explore programs, and stay connected with student life at Oklahoma City University.</p>
+      
+      <!-- Change Password Button -->
+      <a href="form.html" class="btn-primary">Change Password</a>
+
+      <!-- Quick Links Below Button -->
+      <div class="quick-links-hero">
+        <a href="map.html" class="btn-secondary">Campus Map</a>
+        <a href="form.html" class="btn-secondary">Password Form</a>
+        <a href="index.html" class="btn-secondary">Home</a>
+      </div>
+    </section>
+
+    <!-- Gallery Section (2 Images) -->
+    <section class="gallery" aria-labelledby="gallery-heading">
+      <h2 id="gallery-heading">Student Life & Campus</h2>
+      <div class="image-grid">
+        <img src="assets/student1.jpg" alt="Students studying in campus library">
+        <img src="assets/student2.jpg" alt="Students collaborating in classroom">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>© <span id="year"></span> Oklahoma City University. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Responsive nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primary-nav');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.hidden = expanded;
+      toggle.textContent = expanded ? '☰' : '✕';
+    });
+  </script>
+</body>
+</html>
